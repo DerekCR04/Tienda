@@ -3,15 +3,103 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
-<html>
+<html lang="es">
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Pagina de la leccion 2"/>
+        <meta name="keywords" content="html5, css, web, fidelitas"/>
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <h1>Hola Mundo</h1>
-        <div>Proyecto inicial aplicaiones web y patrones</div>
-        <div>Creacion del proyecto</div>
+        <!-- Esta etiqueta indica al navegador un encabezado -->
+        <header id="encabezado">
+            <h1>Tienda en linea</h1>
+            <br>
+        </header>
+        <!-- Esta etiqueta indica al navegador un nav -->
+        <nav id="menu">
+            <a href="ejemplo9.html">Atras</a>
+            <a href="index.html">Home</a>
+            <a href="Ejemplo8.html">Adelante</a>
+        </nav>
+        
+        <aside id="barraLateral">
+            <h2>Productos mas vendidos</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit imperdiet conubia cras scelerisque, faucibus commodo cursus eleifend leo accumsan sodales morbi lectus purus duis, tristique cum tempus urna porttitor malesuada himenaeos posuere facilisi etiam. Lacinia faucibus mattis integer morbi euismod libero quisque facilisis eget semper accumsan viverra, senectus suscipit hendrerit feugiat tristique justo praesent cum congue turpis. Molestie nibh ullamcorper etiam cum sapien tincidunt per pharetra sollicitudin lacinia volutpat curae odio, dui congue egestas taciti tortor inceptos porttitor proin risus bibendum at.</p>
+        </aside>
+        <section id="contenido">
+            <h2>Articulos pricipales</h2>
+            <article>
+                <header>Asus Vivobook</header>
+                <p class="descripcion"><cite>Lorem ipsum dolor sit amet consectetur</cite> adipiscing elit imperdiet conubia cras scelerisque, faucibus commodo cursus eleifend leo accumsan sodales morbi lectus purus duis, tristique cum tempus urna porttitor malesuada himenaeos posuere facilisi etiam. Lacinia faucibus mattis integer morbi euismod libero quisque facilisis eget semper accumsan viverra, senectus suscipit hendrerit feugiat tristique justo praesent cum congue turpis. Molestie nibh ullamcorper etiam cum sapien tincidunt per pharetra sollicitudin lacinia volutpat curae odio, dui congue egestas taciti tortor inceptos porttitor proin risus bibendum at.</p>
+                <figure>
+                    <img src="imagenes/asusbook.png" alt="Aus Vivobook" width="200"/>
+                    <figcaption>Imagen con fines ilustrativos</figcaption>
+                </figure>
+            </article>
+            
+            <article>
+                <header>Alieneare</header>
+                <p class="descripcion"><cite>Lorem ipsum dolor sit amet consectetur</cite> adipiscing elit imperdiet conubia cras scelerisque, faucibus commodo cursus eleifend leo accumsan sodales morbi lectus purus duis, tristique cum tempus urna porttitor malesuada himenaeos posuere facilisi etiam. Lacinia faucibus mattis integer morbi euismod libero quisque facilisis eget semper accumsan viverra, senectus suscipit hendrerit feugiat tristique justo praesent cum congue turpis. Molestie nibh ullamcorper etiam cum sapien tincidunt per pharetra sollicitudin lacinia volutpat curae odio, dui congue egestas taciti tortor inceptos porttitor proin risus bibendum at.</p>
+                <figure>
+                    <img src="imagenes/Alienware.png" alt="Alienware" width="200"/>
+                    <figcaption>Mas vendido</figcaption>
+                </figure>
+            </article>
+            
+            <article>
+                <header>Impresora 3D</header>
+                <p class="descripcion"><cite>Lorem ipsum dolor sit amet consectetur</cite> adipiscing elit imperdiet conubia cras scelerisque, faucibus commodo cursus eleifend leo accumsan sodales morbi lectus purus duis, tristique cum tempus urna porttitor malesuada himenaeos posuere facilisi etiam. Lacinia faucibus mattis integer morbi euismod libero quisque facilisis eget semper accumsan viverra, senectus suscipit hendrerit feugiat tristique justo praesent cum congue turpis. Molestie nibh ullamcorper etiam cum sapien tincidunt per pharetra sollicitudin lacinia volutpat curae odio, dui congue egestas taciti tortor inceptos porttitor proin risus bibendum at.</p>
+                <figure>
+                    <img src="imagenes/impresora 3D.png" alt="Impresora 3D" width="200"/>
+                    <figcaption>Mas economico</figcaption>
+                </figure>
+            </article>
+            
+            <br>
+            <br>
+            
+            <article>
+                <h2>Lineas de productos</h2>
+                <table border="0">
+                    <thead id="encabezadoTabla">
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Descripcion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaResumen">
+                        <tr>
+                            <td>1</td>
+                            <td>Teclados</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Monitores</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Portatiles</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Perifericas</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Baterias</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Headsets</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <footer id="piePagina">
+            Derechos reservados &COPY; 2023 <address>Guacima, Alajuela</address> <address>Tel 8532 4288</address>
+        </footer>
     </body>
 </html>

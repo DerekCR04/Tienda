@@ -51,7 +51,7 @@ public class IndexController {
         return "modificarCliente";
     }
     
-    @GetMapping("/eliminarCliente/idCliente")
+    @GetMapping("/eliminarCliente/{idCliente}")
     public String eliminarCliente(Cliente cliente){
         clienteService.delete(cliente);
         return "redirect:/";

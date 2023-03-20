@@ -25,7 +25,7 @@ public class ArticuloServiceImpl implements ArticuloService{
 
     @Override
     @Transactional (readOnly = true)
-    public List<Articulo> getArticulo(boolean activos) {
+    public List<Articulo> getArticulos(boolean activos) {
         var lista = (List<Articulo>)articuloDao.findAll();
         
         if(activos){

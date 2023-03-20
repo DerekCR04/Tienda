@@ -32,7 +32,7 @@ public class ArticuloController {
     @GetMapping("/articulo/listado")
     public String inicio(Model model) {
         
-        var articulos=articuloService.getArticulo(false);
+        var articulos=articuloService.getArticulos(false);
         //var articulos= Arrays.asList();
         model.addAttribute("articulos", articulos);
 

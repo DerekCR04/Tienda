@@ -10,7 +10,6 @@
         <header th:replace="layout/plantilla :: header"/>
         <div class="contenido">
             <h2>Listado de clientes</h2>
-            <a th:href="@{/cliente/nuevo}">Nuevo Cliente</a>
             
             <br/>
             <br/>
@@ -38,8 +37,6 @@
                     </tbody>
                 </table>
             </div>
-            
-            <a th:href="@{/cliente/buscar}">Buscar Cliente</a>
 
             <div th:if="${clientes == null or clientes.empty}">
                 La lista de clientes es vacia

@@ -20,6 +20,15 @@
                 <br/>
                 <br/>
 
+                <label for="categoria">Categoria</label>
+                <select th:field="*{idCategoria}">
+                    <option th:each="categoria: ${categorias}"
+                            th:value="${categoria.idCategoria}"
+                            th:text="${categoria.descripcion}"/>
+                </select>
+                <br/>
+
+
                 <label for="descripcion">Descripcion:</label><br/> 
                 <input type="text" name="descripcion" th:field="*{descripcion}" /><br/>
 
@@ -32,9 +41,56 @@
                 <label for="existencias">Existencias</label><br/> 
                 <input type="number" name="existencias" th:field="*{existencias}" /><br/>
 
-                <input type="submit" name="Guardar" value="Guardar" />
-            </form>
+                <label for="activo">Activo</label>
+                <input type="checkbox" name="activo" th:field="*{activo}"><br/>
 
-            <footer th:replace="layout/plantilla :: footer"/> 
+                    <input type="submit" name="Guardar" value="Guardar" />
+            </form>
+        </div>
+
+        <footer th:replace="layout/plantilla :: footer"/> 
     </body>
 </html>
+
+
+<!-- Inicio de blaclbox -->
+
+<!-- 
+<!DOCTYPE html>
+<html xmlns:th="htp://www.thymeleaf.org"
+      xmlns"http://www.w3.org/1999/xhtml>
+    <head>
+        <title>TechShop</title>
+        <meta charset=**TUTE-8*/>
+        <link href="/css/menu.css" rel="stylesheet" type=*text/cas"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"/>
+        <div class="contenido>
+             <h2>Datos de Cliente</h2>
+             <a th:href="@(/articulo/listado} ">Regresar</a>
+            <br/><br/>
+            <form th:action="@(/articulo/guardar)" method="post" th:object="(articulo)
+                  <input type="hidden" name="idArticulo" th:field=" (idArticulo}/><br/>
+                  <label for="categoria">Categoria</labe1>
+                <select th:field=" {idCategoria)">
+                    <option th:each="categoria: $(categorias)"
+                            th:value="$(categoria .idCategoria)"
+                            th:text="categoria .description)"/>
+                </select><br/>
+                <label for="descripcion">Descripcion:</labe1>
+                    <input type="text" name-*descripcion" th:field (descripcion)*/pctr/>
+                    <label for="detalle">Detalle:</label>
+                    <textarea name="detalle" th:field=" (detalle}" rowg="6" cols=*50"/><br/>
+                    <label for="precio">Precio:</label>
+                    <input type="number" name-"precio" th:field=" (precio)*/><br/>
+                           <label for="existencias">Existencias:</label>
+                <input type="number" name="existencias" th:field="* {existencias)br/>
+                       <label for="activo">Activo:</labe1>
+                    <input type="checkbox" name="activo" th:field=" {activo)*/><br/>
+                           <input type="submit" name="guadar" value=*Guardar*/>
+            </form>
+            <ATP/>
+            <footer th:replace="layout/plantilla :: footer"/>
+    </body>
+</html> -->

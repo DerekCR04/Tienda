@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-
-<html>
-    <head>
-        <title>TechShop</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
+    <head th:replace="layout/plantilla :: head">
+        <title>Techshop</title>
     </head>
     <body>
         <header th:replace="layout/plantilla :: header"/>
-        <h1>Datos de cliente</h1>
+        <h2> Datos de Cliente </h2>
         <br/>
         <a th:href="@{/}">Regresar</a>
         <br/>
@@ -16,23 +15,20 @@
         <form th:action="@{/guardarCliente}"
               method="POST"
               th:object="${cliente}">
-            
             <input type="hidden" name="idCliente" th:field="*{idCliente}"/>
-            
-            <label for="nombre">Nombre</label><br/>
-            <input type="text" name="nombre" th:fiel="*{nombre}"><br/>
-            
-            <label for="apellidos">Apellidos</label><br/>
-            <input type="text" name="apellidos" th:fiel="*{apellidos}"><br/>
-            
-            <label for="correo">Correo</label><br/>
-            <input type="email" name="correo" th:fiel="*{correo}"><br/>
-            
-            <label for="telefono">Telefono</label><br/>
-            <input type="tel" name="telefono" th:fiel="*{telefono}"><br/><br/><br/>
-            
-            <input type="submit" name="Guardar" value="Guardar">
-            
+            <label for="nombre">Nombre:</label><br/>
+            <input type="text" name="nombre" th:field="*{nombre}"/><br/>
+
+            <label for="apellidos">Apellidos:</label><br/>
+            <input type="text" name="apellidos" th:field="*{apellidos}"/><br/>
+
+            <label for="correo">Correo:</label><br/>
+            <input type="email" name="coreo" th:field="*{correo}"/><br/>
+
+            <label for="telefono">Telefono:</label><br/>
+            <input type="tel" name="telefono" th:field="*{telefono}"/><br/><br/>
+
+            <input type="submit" name="Guardar" value ="Guardar"/>
         </form>
         <footer th:replace="layout/plantilla :: footer"/>
     </body>

@@ -1,41 +1,30 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.Tienda.service;
 
 import com.Tienda.dao.ArticuloDao;
-import com.Tienda.domain.Articulo;
 import com.Tienda.domain.Articulo;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- *
- * @author derek
- */
-
 @Service
-public class ArticuloServiceImpl implements ArticuloService{
-    
+public class ArticuloServiceImpl implements ArticuloService {
     @Autowired
     ArticuloDao articuloDao;
 
     @Override
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true) //para manejar transacciones de solo lectura
     public List<Articulo> getArticulos(boolean activos) {
-        var lista = (List<Articulo>)articuloDao.findAll();
-        
-        if(activos){
+        var lista = (List<Articulo>) articuloDao.findAll();
+        if (activos) { //activos = true, es lo mismo
             lista.removeIf(e -> !e.isActivo());
+            //remover elemantos donde el elemento donde activo es falso
         }
         return lista;
     }
 
     @Override
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true) //para manejar transacciones de solo lectura
     public Articulo getArticulo(Articulo articulo) {
         return articuloDao.findById(articulo.getIdArticulo()).orElse(null);
     }
@@ -51,6 +40,5 @@ public class ArticuloServiceImpl implements ArticuloService{
     public void delete(Articulo articulo) {
         articuloDao.deleteById(articulo.getIdArticulo());
     }
-    
-    
+
 }

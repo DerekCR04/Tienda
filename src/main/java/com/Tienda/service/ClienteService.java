@@ -1,26 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package com.Tienda.service;
 
 import com.Tienda.domain.Cliente;
 import java.util.List;
 
-/**
- *
- * @author derek
- */
 public interface ClienteService {
-
-    public List<Cliente> getCliente();
-
+    
+    public List<Cliente> getClientes();
+    
     public Cliente getCliente(Cliente cliente);
-
-    public void save(Cliente cliente);
-
+    
+    public void save(Cliente cliente); //Sirve para insertar y modificar un registro
+    
     public void delete(Cliente cliente);
     
-    public List<Cliente> getClienteApellidos(String apellidos);
-
+    public List<Cliente> getClienteCorreo(String correo);
+    public List<Cliente> getNombreAndApellidos(String nombre, String apellidos);
+    
+    public List<Cliente> getApellidos(String apellidos);
 }

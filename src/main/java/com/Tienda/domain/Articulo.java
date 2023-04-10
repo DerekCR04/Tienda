@@ -4,20 +4,16 @@
  */
 package com.Tienda.domain;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.io.Serializable;
 import lombok.Data;
 
-/**
- *
- * @author derek
- */
 @Data
 @Entity
 @Table(name="articulo")
 public class Articulo implements Serializable{
+     private static final long serialVersionUID = 1L;
     
-    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idArticulo;
@@ -38,9 +34,5 @@ public class Articulo implements Serializable{
         this.precio = precio;
         this.existencias = existencias;
         this.activo = activo;
-    }
-    
-    
-    
-    
+    }        
 }

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.Tienda.service;
 
 import com.Tienda.dao.CategoriaDao;
@@ -11,29 +7,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- *
- * @author derek
- */
-@Service
-public class CategoriaServiceImpl implements CategoriaService{
-    
+@Service //Esto ayuda a reconoce los metodos, va pegada a public class
+public class CategoriaServiceImpl implements CategoriaService {
     @Autowired
-    CategoriaDao categoriaDao;
+    private CategoriaDao categoriaDao;
 
     @Override
-    @Transactional (readOnly = true)
-    public List<Categoria> getCategoria(boolean activos) {
+    @Transactional(readOnly = true) //para manejar transacciones de solo lectura
+    public List<Categoria> getCategorias(boolean activos) {
         var lista = (List<Categoria>)categoriaDao.findAll();
-        
-        if(activos){
-            lista.removeIf(e -> !e.isActivo());
+        if(activos){ //activos = true, es lo mismo
+            lista.removeIf(e -> !e.isActivo()); 
+            //remover elemantos donde el elemento donde activo es falso
         }
         return lista;
     }
 
     @Override
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true) //para manejar transacciones de solo lectura
     public Categoria getCategoria(Categoria categoria) {
         return categoriaDao.findById(categoria.getIdCategoria()).orElse(null);
     }
@@ -49,4 +40,5 @@ public class CategoriaServiceImpl implements CategoriaService{
     public void delete(Categoria categoria) {
         categoriaDao.deleteById(categoria.getIdCategoria());
     }
+
 }
